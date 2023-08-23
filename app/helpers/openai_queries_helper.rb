@@ -1,0 +1,2 @@
+module OpenaiQueriesHelper
+end

@@ -10,7 +10,7 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <%= link_to 'Openai queries', openai_queries_path, class: "nav-link"%>          
         </li>
         <li class="nav-item">
         <%if user_signed_in?%>         

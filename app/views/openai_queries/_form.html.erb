@@ -1,0 +1,22 @@
+<%= form_with(model: openai_query) do |form| %>
+  <% if openai_query.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(openai_query.errors.count, "error") %> prohibited this openai_query from being saved:</h2>
+
+      <ul>
+        <% openai_query.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :query, style: "display: block" %>
+    <%= form.text_field :query, class: "form-control", required: true, placeholder: "Ask" %>
+  </div>
+
+  <div>
+    <%= form.submit "Create query", class: 'btn btn-primary' %>
+  </div>
+<% end %>
