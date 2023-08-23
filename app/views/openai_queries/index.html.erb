@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Openai queries</h1>
+
+<%= link_to "New openai query", new_openai_query_path %>
+<br><br><br>
+<div id="openai_queries">
+  <% @openai_queries.each do |openai_query| %>
+    <%= render openai_query %>
+    <p>
+      <%= link_to "Show this openai query", openai_query %>
+    </p>
+  <% end %>
+</div>
+
+

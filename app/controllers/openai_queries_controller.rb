@@ -1,6 +1,6 @@
 require "openai"
 class OpenaiQueriesController < ApplicationController
-  before_action :set_openai_query, only: %i[ show edit update destroy ]
+  before_action :set_openai_query, only: %i[ show ]
 
   
   def index
@@ -37,6 +37,7 @@ class OpenaiQueriesController < ApplicationController
   private
    
     def get_chat_data  
+      # This is taking time it should be go as sidekiq process.
       client = OpenAI::Client.new
       response = client.chat(
         parameters: {
@@ -45,7 +46,7 @@ class OpenaiQueriesController < ApplicationController
             temperature: 0.7
         })
       
-      @openai_query.answer = response.dig("choices", 0, "message", "content")
+      @openai_query.answer = response.dig("choices", 0, "message", "content") if response.present?
       @openai_query.user = current_user
     end
 
