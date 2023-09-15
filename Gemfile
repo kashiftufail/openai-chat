@@ -79,3 +79,7 @@ gem "devise", "~> 4.9"
 gem "sidekiq", "~> 7.1"
 
 gem "ruby-openai"
+
+gem "followable_behaviour", "~> 0.2.0"
+
+gem "maxminddb", "~> 0.1.22"

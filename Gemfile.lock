@@ -105,6 +105,8 @@ GEM
     faraday-multipart (1.0.4)
       multipart-post (~> 2)
     faraday-net_http (3.0.2)
+    followable_behaviour (0.2.0)
+      activerecord (~> 7.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -127,6 +129,7 @@ GEM
       net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
+    maxminddb (0.1.22)
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.19.0)
@@ -254,8 +257,10 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.9)
+  followable_behaviour (~> 0.2.0)
   jbuilder
   jsbundling-rails
+  maxminddb (~> 0.1.22)
   pg (~> 1.1)
   pry
   puma (~> 5.0)
