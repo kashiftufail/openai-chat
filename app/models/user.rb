@@ -5,7 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :openai_queries, dependent: :destroy
-  after_create :send_welcome_email    
+  # after_create :send_welcome_email    
+
+  follower_behaviour
+
+  followable_behaviour
+  
 
 
   def send_welcome_email

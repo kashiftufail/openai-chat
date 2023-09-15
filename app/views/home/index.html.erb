@@ -1,6 +1,19 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 
+<%
+
+ image_filename = "default.png"  # Replace with the actual image filename
+
+      # Construct the path to the image in the assets directory
+      assets_path = Rails.root.join('app', 'assets', 'images','icons' ,image_filename)
+
+
+%>
+<%   if File.exist?(assets_path) %>
+        
+<%= image_tag "/assets/icons/#{image_filename}" %>        
+ <%end%> 
 hello <%= current_user.email%>
 <br><br><br>
 <%= link_to "New openai query", new_openai_query_path %>
